@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="red">#B90008</color>
+    <color name="line_color">#E6E6E6</color>
+
+    <color name="white">#fff</color>
+    <color name="trans_white">#00FFFFFF</color>
+    <color name="black">#000</color>
+    <color name="black1">#33000000</color>
+    <color name="mask">#99000000</color>
+</resources>

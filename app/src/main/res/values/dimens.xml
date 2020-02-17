@@ -1,0 +1,15 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="header_height">144dp</dimen>//头部高度
+    <dimen name="iv_close_height">60dp</dimen>//收起按钮高度
+    <dimen name="donw_content_alpha_y">468dp</dimen>//收起按钮、vp、sl透明度临界值
+    <dimen name="top_bar_height">64dp</dimen>//topBar高度
+    <dimen name="content_trans_y">340dp</dimen>//滑动内容初始transY值
+    <dimen name="stl_height">36dp</dimen>//TabLayout高度
+    <dimen name="shop_bar_height">54dp</dimen>//购物内容高度
+
+    <dimen name="food_content_trans_y">92dp</dimen>//商品内容高度
+    <dimen name="iv_food_expand">36dp</dimen>//展开iv高度
+    <dimen name="iv_food_icon_trans_y">108dp</dimen>//分享、关闭transY
+
+</resources>

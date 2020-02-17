@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:ignore="ContentDescription,HardcodedText,RtlHardcoded,SmallSp">
+
+    <com.pgm.elemenestedscrolling.widget.ElemeNestedScrollLayout
+        android:id="@+id/eleme_nested_scroll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--头部-->
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/header_height"
+                android:background="@android:color/white">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/header_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_collect"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_heart_bg"
+                    android:scaleType="center"
+                    android:src="@mipmap/heart"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+            <!--头部-->
+
+            <!--折叠内容-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_collapsed_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/white">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxEms="10"
+                    android:singleLine="true"
+                    android:text="麦当劳麦乐送（广州花城大道第四分店）"
+                    android:textColor="#333"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="评价4.8   月售601单   商家配送约28分钟"
+                    android:textColor="#666"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView6"
+                    app:layout_constraintStart_toStartOf="@+id/textView6"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="40dp"
+                    android:layout_height="0dp"
+                    android:background="#ffe578"
+                    android:gravity="center"
+                    android:text="￥7"
+                    android:textColor="#594519"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView10"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+                <com.pgm.elemenestedscrolling.widget.DrawableLeftTextView
+                    android:id="@+id/textView10"
+                    android:layout_width="60dp"
+                    android:layout_height="26dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#ffe578"
+                    android:drawableLeft="@mipmap/crown"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
+                    android:text="无门槛"
+                    android:textColor="#594519"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView7"
+                    app:layout_constraintStart_toStartOf="@+id/textView7"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <com.pgm.elemenestedscrolling.widget.CouponView
+                    android:id="@+id/couponView"
+                    android:layout_width="4dp"
+                    android:layout_height="0dp"
+                    android:background="#ffe578"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/textView10"
+                    app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="0dp"
+                    android:background="#ffe578"
+                    android:gravity="center"
+                    android:text="领取"
+                    android:textColor="#594519"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/couponView"
+                    app:layout_constraintStart_toEndOf="@+id/couponView"
+                    app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_collasped"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/iv_close_height"
+                    android:alpha="0"
+                    android:scrollbars="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_collapsed_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="68dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/shape_coupu_text_bg"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="2dp"
+                        android:text="69减15"
+                        android:textColor="#ff4b33"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:background="@drawable/shape_coupu_text_bg"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="2dp"
+                        android:text="99减25"
+                        android:textColor="#ff4b33"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toEndOf="@+id/textView12"
+                        app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+                    <TextView
+                        android:id="@+id/tv_coupon_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="68dp"
+                        android:drawableRight="@mipmap/triangle_down"
+                        android:text="4个优惠"
+                        android:textColor="#999"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxEms="20"
+                        android:singleLine="true"
+                        android:text="公告：春节不打烊，金喜送到家。新品金凤来福鸡排堡、金尊肉酱厚牛堡上线，配上扭扭薯条，等您品尝！"
+                        android:textColor="#999"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_coupon_count"
+                        app:layout_constraintStart_toStartOf="@+id/textView12"
+                        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/shape_coupon_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/layer_small_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/view2"
+                        app:layout_constraintStart_toStartOf="@+id/view2"
+                        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="麦当劳会员"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/view"
+                        app:layout_constraintTop_toTopOf="@+id/view" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="领卡即享专属优惠，立省88.5元。"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/view"
+                        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                    <TextView
+                        android:layout_width="72dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/shape_vip_bg"
+                        android:gravity="center"
+                        android:text="立即领卡"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/view2"
+                        app:layout_constraintEnd_toEndOf="@+id/view2"
+                        app:layout_constraintTop_toTopOf="@+id/view2" />
+                </android.support.constraint.ConstraintLayout>
+            </android.support.constraint.ConstraintLayout>
+            <!--折叠内容-->
+        </LinearLayout>
+
+        <!--顶部搜索栏-->
+        <com.pgm.elemenestedscrolling.widget.TopBarLayout
+            android:id="@+id/cl_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            >
+
+            <View
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/v_top_bar_bg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:alpha="0"
+                android:background="@android:color/white" />
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:scaleType="center"
+                android:src="@mipmap/back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="14dp" />
+
+            <ImageView
+                android:id="@+id/iv_assemble"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:scaleType="center"
+                android:src="@mipmap/assemble"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="14dp" />
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="center"
+                android:src="@mipmap/share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv_assemble"
+                android:layout_marginBottom="14dp"  />
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="center"
+                android:src="@mipmap/search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv_share"
+                android:layout_marginBottom="14dp" />
+
+            <com.pgm.elemenestedscrolling.widget.DrawableLeftTextView
+                android:id="@+id/tv_search"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:alpha="0"
+                android:background="@drawable/shape_search_bg"
+                android:drawableLeft="@mipmap/small_search"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:text="想吃什么搜一搜"
+                android:textColor="#A3A3A3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv_assemble"
+                app:layout_constraintStart_toEndOf="@+id/iv_back"
+                android:layout_marginBottom="14dp"  />
+        </com.pgm.elemenestedscrolling.widget.TopBarLayout>
+        <!--顶部搜索栏-->
+
+        <!--滑动内容-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="1"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:translationY="@dimen/content_trans_y">
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/stl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/stl_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tl_indicator_color="@color/red"
+                app:tl_indicator_height="3dp"
+                app:tl_indicator_width_equal_title="true"
+                app:tl_tab_space_equal="true"
+                app:tl_textBold="BOTH"
+                app:tl_textSelectColor="@android:color/black"
+                app:tl_textUnselectColor="@android:color/black"
+                app:tl_textsize="14sp"
+                app:tl_underline_color="@color/line_color"
+                app:tl_underline_gravity="BOTTOM"
+                app:tl_underline_height="1dp" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stl" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/iv_close_height"
+                android:alpha="0"
+                android:scaleType="center"
+                android:src="@mipmap/arrow_up"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+        <!--滑动内容-->
+
+        <!--购物内容-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_shop_bar"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="@dimen/shop_bar_height"
+            >
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#333333"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_sum"
+                app:layout_constraintEnd_toStartOf="@+id/tv_sum"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_sum" />
+
+            <TextView
+                android:id="@+id/tv_sum"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:background="#535356"
+                android:gravity="center"
+                android:text="￥0元起送"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_cart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/layer_cart_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="未选购商品"
+                android:textColor="#999"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_cart"
+                app:layout_constraintTop_toTopOf="@+id/view3" />
+
+            <TextView
+                android:layout_marginBottom="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="另需配送费9元"
+                android:textColor="#999"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_cart"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+        <!--购物内容-->
+    </com.pgm.elemenestedscrolling.widget.ElemeNestedScrollLayout>
+
+
+    <com.pgm.elemenestedscrolling.widget.ElemeFoodNestedScrollLayout
+        android:id="@+id/eleme_food_ns_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:alpha="0"
+            android:id="@+id/v_mask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/mask" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/ns"
+            android:translationY="@dimen/food_content_trans_y"
+            android:fillViewport="true"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp"
+                    android:src="@mipmap/food"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="五人团圆餐"
+                    android:textColor="#333"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="￥233"
+                    android:textColor="#ff4b33"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/shape_food_add_bg"
+                    android:scaleType="center"
+                    android:src="@mipmap/add"
+                    app:layout_constraintBottom_toBottomOf="@+id/text2"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+                <TextView
+                    android:alpha="0"
+                    android:id="@+id/t_food_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="川辣双鸡堡1份+麦辣鸡腿汉堡1个+板烧鸡腿堡1个+那么大鸡排1份+麦辣鸡翅4块+中薯条1份+大可乐1杯*660ml+大柠檬红茶1杯*660ml+大雪碧1杯*660ml"
+                    android:textColor="#666"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/text2"
+                    app:layout_constraintTop_toBottomOf="@+id/text2" />
+
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#e6e6e6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text2" />
+
+                <TextView
+                    android:id="@+id/t_comm_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="共1人评价了该商品"
+                    android:textColor="#666"
+                    android:textSize="12sp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+                <TextView
+                    android:alpha="0"
+                    android:id="@+id/t_comm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="商品评价"
+                    android:textColor="#333"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/t_food_detail" />
+
+                <TextView
+                    android:id="@+id/t_good_comm_rate"
+                    android:alpha="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(好评率100%)"
+                    android:textColor="#333"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/t_comm"
+                    app:layout_constraintStart_toEndOf="@+id/t_comm" />
+
+                <TextView
+                    android:id="@+id/t_comm_detail"
+                    android:alpha="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:drawableRight="@mipmap/arrow_right"
+                    android:text="1条评价"
+                    android:textColor="#666"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/t_comm"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <View
+                    app:layout_constraintTop_toBottomOf="@+id/t_comm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="340dp"/>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <ImageView
+            android:alpha="0"
+            android:layout_gravity="right"
+            android:id="@+id/iv_small_share"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:translationY="@dimen/iv_food_icon_trans_y"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/shape_circle_bg"
+            android:scaleType="center"
+            android:src="@mipmap/small_share"
+             />
+
+        <ImageView
+            android:alpha="0"
+            android:layout_gravity="right"
+            android:id="@+id/iv_small_close"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:translationY="@dimen/iv_food_icon_trans_y"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_circle_bg"
+            android:scaleType="center"
+            android:src="@mipmap/close" />
+
+        <ImageView
+            android:alpha="0"
+            android:id="@+id/iv_food_expand"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/iv_food_expand"
+            android:scaleType="center"
+            android:src="@mipmap/arrow_up" />
+
+        <!--购物内容-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_food_shop_bar"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="@dimen/shop_bar_height"
+            android:translationY="@dimen/shop_bar_height"
+            >
+
+            <View
+                android:id="@+id/v3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#333333"
+                app:layout_constraintBottom_toBottomOf="@+id/t_sum"
+                app:layout_constraintEnd_toStartOf="@+id/t_sum"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/t_sum" />
+
+            <TextView
+                android:id="@+id/t_sum"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:background="#535356"
+                android:gravity="center"
+                android:text="￥0元起送"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/i_cart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/layer_cart_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="未选购商品"
+                android:textColor="#999"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/i_cart"
+                app:layout_constraintTop_toTopOf="@+id/v3" />
+
+            <TextView
+                android:layout_marginBottom="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="另需配送费9元"
+                android:textColor="#999"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/i_cart"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+        <!--购物内容-->
+    </com.pgm.elemenestedscrolling.widget.ElemeFoodNestedScrollLayout>
+</FrameLayout>
