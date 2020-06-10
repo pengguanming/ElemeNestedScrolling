@@ -1,3 +1,9 @@
+## 嵌套系列导航
++ 1.[浅析NestedScrolling嵌套滑动机制之基础篇](https://juejin.im/post/5ede31496fb9a047a226a44a)
++ 2.[浅析NestedScrolling嵌套滑动机制之实践篇-仿写饿了么商家详情页](https://juejin.im/post/5ede323de51d45786973d238)
++ 3.[浅析NestedScrolling嵌套滑动机制之CoordinatorLayout.Behavior](https://juejin.im/post/5ede39ebe51d45788a6d6ee8)
++ 4.[浅析NestedScrolling嵌套滑动机制之实践篇-自定义Behavior实现小米音乐歌手详情](https://juejin.im/post/5ede3b0a51882542e723015d)
+
 # ElemeNestedScrolling
 基于NestedScrolling仿写饿了么嵌套滑动效果
 
